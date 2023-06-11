@@ -1,3 +1,5 @@
+# Design Architecture (sixth task)
+### Stack: HTML & CSS. Themes - Flex & Grid, training project.
 ## Завдання
 
 Повторити макет [psd](Design_Architecture.psd)
