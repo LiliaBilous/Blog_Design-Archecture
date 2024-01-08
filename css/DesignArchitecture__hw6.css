@@ -1,13 +1,13 @@
- *,
- *:before,
- *:after {
-    box-sizing: border-box;
- }
- .wrapper {
+@import url(./resed.css);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,regular,500,600,700,800,300italic,italic,500italic,600italic,700italic,800italic&display=swap);
+
+body {
     font-family: 'Open Sans', sans-serif;
 }
+
+/* --------header---------- */
 /* Flexbox */
-.header-navbar {
+.header {
     width: 100%;
     height: 70px;
     background-color: #1d2124;
@@ -16,43 +16,56 @@
     justify-content: space-evenly;
     color: white;
 }
+
 .header-logo {
     flex: 2;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
-.wrapper-logo {
+
+.wrapper-icon {
     width: 70px;
     height: 70px;
     background-color: #1a1d20;
 }
+
 .header-icon {
     padding: 20px;
 }
+
 .logo-text {
     padding-left: 5px;
     font-size: 20px;
     font-weight: bold;
     text-transform: capitalize;
 }
-nav {
+
+.header-menu-list {
     flex: 20;
     display: flex;
     justify-content: center;
 }
-.header-menu {
+
+.header-menu-link {
     margin: 0 20px;
     font-size: 15px;
     text-transform: uppercase;
+    transition: color 0.75s ease;
 }
-.header-search {
+
+.header-menu-link:hover {
+    color: #18b4cf;
+}
+
+.header-search-icon {
     background-color: #1a1d20;
     padding: 5px;
 }
 
-.header-photo {
-    background-image: url(../hw6_img/header-bg.jpeg);
+/* --------banner section---------- */
+.banner {
+    background-image: url(../img/header-bg.jpeg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: 25% 75%;
@@ -60,51 +73,72 @@ nav {
     height: 355px;
     background-size: cover;
 }
-.overlay {
+
+.banner__overlay {
     background-color: rgba(0, 0, 0, 0.5);
     height: 100%;
     width: 100%;
     padding: 10px 0;
 }
-.main-title {
+
+.banner-title {
     font-size: 27px;
     text-transform: uppercase;
     text-align: center;
     padding-top: 120px;
     color: white;
 }
-.buttons {
+
+.banner__action-btn {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 40px 10px;
 }
-button {
-    width: 168px;
-    height: 50px;
+
+.banner__action-item {
+    width: 170px;
+    height: 55px;
+    font-size: 18px;
+    font-weight: 500;
     border: 1px solid transparent;
     border-radius: 5px;
     color: white;
+    cursor: pointer;
 }
+
+.banner__action-item:hover {
+    color: #1a1d20;
+    transition: color 1s ease;
+}
+
 .subscribe {
     background-color: #89ca62;
     margin-right: 20px;
 }
+
 .articles {
     background-color: #14b9d5;
 }
+
+/* --------popular post section---------- */
 .pop-posts {
     background-color: #f2f2f2;
     height: 1028px;
 }
+
+.pop-posts-title {
+    padding: 64px 0 52px 0;
+}
+
 .title {
     color: #18b4cf;
     font-size: 27px;
     font-weight: bold;
     text-align: center;
-    padding: 65px 0 50px 0;
     text-transform: uppercase;
 }
+
 .posts {
     display: flex;
     flex-flow: column wrap;
@@ -113,7 +147,20 @@ button {
     align-content: center;
     height: 850px;
 }
-h4 {
+
+.post {
+    display: flex;
+    flex-direction: column;
+    width: 370px;
+    margin: 10px;
+    transition: all 1s ease;
+}
+
+.post:hover {
+    transform: scale(1.02);
+}
+
+.post-title {
     height: 60px;
     font-size: 18px;
     font-weight: bold;
@@ -121,25 +168,25 @@ h4 {
     background-color: white;
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: center;
 }
-.pop {
-    width: 370px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-}
+
 .post-1 {
     order: 1;
 }
+
 .post-2 {
-    order: 2; 
+    order: 2;
 }
+
 .post-3 {
     order: 3;
 }
+
+/* --------popular clients section---------- */
 /* CSS Grid */
-.parallax {
-    background-image: url(../hw6_img/parallax-bg.jpeg);
+.popular-clients {
+    background-image: url(../img/parallax-bg.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -149,19 +196,30 @@ h4 {
     width: auto;
     padding: 180px 0;
 }
-.para-title {
+
+.popular-clients-title {
+    position: relative;
     font-size: 32px;
     font-weight: bold;
     color: white;
     text-align: center;
     text-transform: uppercase;
+    padding-bottom: 60px;
+    margin-bottom: 60px;
 }
-.line {
-    color: #169cb4;
-    text-align: center;
-    font-weight: bold;
-    margin: 50px 0;
+
+.popular-clients-title::after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    width: 60px;
+    background-color: #14b9d5;
 }
+
 .brands {
     display: grid;
     grid-template-columns: repeat(4, 200px);
@@ -171,7 +229,31 @@ h4 {
     justify-content: center;
     grid-gap: 1.5vw;
 }
-.latespost {
+
+.brand-client {}
+
+/* --------top rated article section---------- */
+.blog {}
+
+.blog-title {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    padding: 64px 0 52px 0;
+}
+
+.toggle-icon {
+    cursor: pointer;
+    border: solid #14b9d5 10px;
+    border-width: 0 5px 5px 0;
+    display: inline-block;
+    padding: 10px;
+    margin: 20px;
+    transform: rotate(45deg);
+}
+
+
+.blog-latespost {
     display: grid;
     max-width: 100%;
     grid-template-columns: repeat(7, 14.28%);
@@ -180,7 +262,9 @@ h4 {
     justify-content: center;
 }
 
+.latespost {}
 
+/* --------hot news section---------- */
 .hot-news {
     display: grid;
     align-content: center;
@@ -188,59 +272,53 @@ h4 {
     align-items: center;
     justify-items: center;
 }
-.title-hot-news {
-    font-size: 27px;
-    font-weight: bold;
-    color: #18b4cf;
-    text-transform: uppercase;
-    padding: 2%;
+
+.hot-news__title {
+    padding: 30px 0;
 }
-.cards-hot-news{
+
+.hot-news__cards {
     display: grid;
     row-gap: 40px;
-    margin: 0 20%;
+    margin: 0 11rem;
 }
+
 .first-row {
     display: grid;
     grid-template-columns: 2.5fr 0.75fr;
     grid-template-rows: 1fr;
     column-gap: 35px;
 }
-.center-block {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1.5fr 1.5fr;
-    column-gap: 60px;
-    row-gap: 40px;
-}
-.last-row {
-    display: grid;
-    grid-template-columns: 0.75fr 2.5fr;
-    grid-template-rows: 1fr;
-    column-gap: 35px;
-    margin-bottom: 70px;
-}
-.new-post {
+
+.card {
     background-color: #f9f7f7;
-    color: #5b6469;    
+    color: #5b6469;
+    transition: all 1s ease;
 }
+
+.card:hover {
+    transform: scale(1.02);
+}
+
 .big-post {
     display: grid;
-    grid-template-columns: 57% 43%;
+    grid-template-columns: 1fr 1fr;
     justify-items: stretch;
 }
-.small-post {
-    display: grid;
-    grid-template-rows: 2fr 0.5fr;
-    align-items: end;
+
+.card__img {
+    width: 100%;
+    height: 100%;
 }
-.description-field {
+
+.card__details {
     display: grid;
     align-content: space-evenly;
     justify-items: end;
     margin: 20px;
 }
-h5 {
+
+.card__title {
     font-size: 18px;
     font-weight: bold;
     color: black;
@@ -248,15 +326,49 @@ h5 {
     align-items: center;
     justify-content: center;
     align-content: space-between;
-    margin-bottom: 20px;
 }
-.discrab {
+
+.card__description {
     font-size: 14px;
     line-height: 1.5;
     text-align: right;
+    margin-top: 25px;
 }
 
-footer {
+.small-post {
+    display: grid;
+    grid-template-rows: 2fr 0.6fr;
+    align-items: end;
+}
+
+.center-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1.5fr 1.5fr;
+    column-gap: 60px;
+    row-gap: 40px;
+    align-items: center;
+}
+
+.last-row {
+    display: grid;
+    grid-template-columns: 0.75fr 2.5fr;
+    grid-template-rows: 1fr;
+    column-gap: 35px;
+    margin-bottom: 70px;
+}
+
+.scroll-to-top {
+    cursor: pointer;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+}
+
+/* --------footer---------- */
+.footer {
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 60% 15%;
@@ -268,22 +380,16 @@ footer {
     background-color: #1d2124;
     padding: 0 20%;
 }
-.footer-text {
+
+.footer-copyright {
     font-size: 13px;
     color: white;
 }
+
 .footer-logo-image {
     height: 30px;
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 0.4fr 0.4fr;
     justify-items: center;
-}
-button:hover {
-    transition: all 0.75s ease;
-    color: #1a1d20;
-}
-nav a:hover{
-    color: #18b4cf;
-    transition: all 0.75s ease;
 }
